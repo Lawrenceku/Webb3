@@ -27,7 +27,8 @@ const AdminLoginPage = () => {
 
   const onSubmit = async (data) => {
     let sdk = new MkdSDK();
-    //TODO
+    alert('login successful')
+    navigate('/admin/dashboard')
   };
 
   return (

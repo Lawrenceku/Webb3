@@ -1,12 +1,28 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
+import titleA from "/src/assets/IMG.png";
+import authorA from "/src/assets/Avatar1.png"
+import authorB from "/src/assets/Rectangle 1534.png";
+import titleB from "/src/assets/Avatar.png";
+import titleC from "/src/assets/Rectangle 154.png";
+import authorC from "/src/assets/Avatar2.png"
+import titleD from "/src/assets/Rectangle 14.png";
+import authorD from "/src/assets/Avatar3.png"
+import titleE from "/src/assets/Rectangle 1.png";
+import authorE from "/src/assets/Avatar4.png"
 const AdminDashboardPage = () => {
+  const navigate = useNavigate()
+
+  function logOut(){
+    alert('logged Out')
+    navigate("/")
+  }
   return (
     <>
-      <div className="w-full flex-col h-screen bg-[#111] ">
+      <div className="w-full flex-col pb-40 h-full bg-[#111] ">
         <div className="flex h-16 w-full items-center justify-between p-8">
           <h1 className="font-black text-4xl text-white ">APP</h1>
-          <button>
+          <button onClick={logOut}>
             <svg width="128" height="48" viewBox="0 0 128 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="128" height="48" rx="24" fill="#9BFF00"/>
                 <g clip-path="url(#clip0_5857_329)">
@@ -35,10 +51,11 @@ const AdminDashboardPage = () => {
                     </svg>
           </div>
           <div className="flex justify-between items-center p-8 mt-4 text-gray-600">
-            <p className="font-thin text-lg"># Title</p>
+            <p className="font-thin text-lg ml-4"># Title</p>
             <p className="font-thin text-lg">Author</p>
             <p className="flex items-center">
             <span className="font-thin text-lg">Most Liked</span>
+            <button>
             <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_5857_388)">
             <path d="M8 10L12 14L16 10" stroke="#696969" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,15 +66,100 @@ const AdminDashboardPage = () => {
             </clipPath>
             </defs>
             </svg>
+            </button>
             </p>
           </div>
           <div className="">
-              <div className="rounded-lg flex items-center  justify-between p-1 h-20 m-8 border border-gray-500 ">
+              <div className="rounded-lg flex items-center  justify-between p-4  m-8 border border-gray-500 ">
                   <div className="flex justify-around items-center w-1/2">
-                    <span className="text-gray-600">01</span>
-                    <img src="src/assets/IMG.png" alt="" />
-                    <span className="text-gray-200 font-[1] text-xl sm:text-[1px] w">Rune raises $100,000 for marketing through NFT butterflies sale</span>
-                    <img src="src/assets/Avatar1.png" alt="" />
+                    <span className="text-gray-600 ">01</span>
+                    <img className="m-2 " src={titleA} alt="" />
+                    <span className="text-gray-200 font-[1] md:text-xl text-[15px] ">Rune raises $100,000 for marketing through NFT butterflies sale</span>
+                    <img className="sm:ml-40" src={authorA} alt="" />
+                  </div>
+                  <div className="text-gray-600 flex items-center">
+                    254<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_5857_97)">
+                          <path d="M10.0085 3.75833V16.25" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M5.01929 8.76167L10.0001 3.74834L14.981 8.76167" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_5857_97">
+                          <rect width="20" height="20" fill="white"/>
+                          </clipPath>
+                          </defs>
+                          </svg>
+                  </div>
+              </div>
+              <div className="rounded-lg flex items-center  justify-between p-4  m-8 border border-gray-500 ">
+                  <div className="flex justify-around items-center w-1/2">
+                    <span className="text-gray-600 ">02</span>
+                    <img className="m-2 " src={authorB} alt="" />
+                    <span className="text-gray-200 font-[1] md:text-xl text-[15px] ">The Cryptocurrency Trading Bible</span>
+                    <img className="sm:ml-40" src={titleB} alt="" />
+                  </div>
+                  <div className="text-gray-600 flex items-center">
+                    254<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_5857_97)">
+                          <path d="M10.0085 3.75833V16.25" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M5.01929 8.76167L10.0001 3.74834L14.981 8.76167" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_5857_97">
+                          <rect width="20" height="20" fill="white"/>
+                          </clipPath>
+                          </defs>
+                          </svg>
+                  </div>
+              </div>
+              <div className="rounded-lg flex items-center  justify-between p-4  m-8 border border-gray-500 ">
+                  <div className="flex justify-around items-center w-1/2">
+                    <span className="text-gray-600 ">03</span>
+                    <img className="m-2 " src={titleC} alt="" />
+                    <span className="text-gray-200 font-[1] md:text-xl text-[15px] ">Designing our new company brand: Meta</span>
+                    <img className="sm:ml-40" src={authorC} alt="" />
+                  </div>
+                  <div className="text-gray-600 flex items-center">
+                    254<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_5857_97)">
+                          <path d="M10.0085 3.75833V16.25" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M5.01929 8.76167L10.0001 3.74834L14.981 8.76167" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_5857_97">
+                          <rect width="20" height="20" fill="white"/>
+                          </clipPath>
+                          </defs>
+                          </svg>
+                  </div>
+              </div>
+              <div className="rounded-lg flex items-center  justify-between p-4  m-8 border border-gray-500 ">
+                  <div className="flex justify-around items-center w-1/2">
+                    <span className="text-gray-600 ">04</span>
+                    <img className="m-2 " src={titleD} alt="" />
+                    <span className="text-gray-200 font-[1] md:text-xl text-[15px] ">Connect media partners, earn exciting rewards  for today</span>
+                    <img className="sm:ml-40" src={authorD} alt="" />
+                  </div>
+                  <div className="text-gray-600 flex items-center">
+                    254<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_5857_97)">
+                          <path d="M10.0085 3.75833V16.25" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M5.01929 8.76167L10.0001 3.74834L14.981 8.76167" stroke="#9BFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_5857_97">
+                          <rect width="20" height="20" fill="white"/>
+                          </clipPath>
+                          </defs>
+                          </svg>
+                  </div>
+              </div>
+              <div className="rounded-lg flex items-center  justify-between p-4  m-8 border border-gray-500 ">
+                  <div className="flex justify-around items-center w-1/2">
+                    <span className="text-gray-600 ">05</span>
+                    <img className="m-2 " src={titleE} alt="" />
+                    <span className="text-gray-200 font-[1] md:text-xl text-[15px] ">Designing a more effective proejcts</span>
+                    <img className="sm:ml-40" src={authorE} alt="" />
                   </div>
                   <div className="text-gray-600 flex items-center">
                     254<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
