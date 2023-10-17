@@ -14,8 +14,36 @@ export default function MkdSDK() {
   };
   
   this.login = async function (email, password, role) {
-    //TODO
+    const response = await fetch(this._baseurl + `/v2/api/lambda/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-project": base64Encode,
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        role,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message);
+    }
+
+    const data = await response.json();
+    
+    // Assuming the API response provides a token
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+    } else {
+      throw new Error("No token received in the login response");
+    }
+
+    return data;
   };
+
 
   this.getHeader = function () {
     return {
@@ -87,7 +115,24 @@ export default function MkdSDK() {
   };  
 
   this.check = async function (role) {
-    //TODO
+    const response = await fetch(
+      this._baseurl + `/v1/api/rest/${this._table}/check`,
+      {
+        method: "POST",
+        headers: this.getHeader(),
+        body: JSON.stringify({
+          role,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message);
+    }
+
+    const data = await response.json();
+    return data;
   };
 
   return this;
